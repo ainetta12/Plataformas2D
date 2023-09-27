@@ -243,7 +243,7 @@ Transform:
   m_GameObject: {fileID: 630450400}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.772, y: -2.195, z: 0}
+  m_LocalPosition: {x: -0.006, y: -0.321, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -318,6 +318,7 @@ GameObject:
   - component: {fileID: 723159861}
   - component: {fileID: 723159860}
   - component: {fileID: 723159862}
+  - component: {fileID: 723159863}
   m_Layer: 0
   m_Name: Personaje
   m_TagString: Untagged
@@ -357,8 +358,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.004433781, y: 0.08113241}
-  m_Size: {x: 0.4733972, y: 0.821324}
+  m_Offset: {x: 0.0101444125, y: 0.06563756}
+  m_Size: {x: 0.68938863, y: 0.8722561}
   m_Direction: 0
 --- !u!4 &723159861
 Transform:
@@ -390,7 +391,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerSpeed: 5
-  _jumpForce: 5
+  _jumpForce: 6
+--- !u!50 &723159863
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723159859}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &742000219
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,7 +433,7 @@ GameObject:
   - component: {fileID: 742000225}
   - component: {fileID: 742000224}
   - component: {fileID: 742000223}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10005,9 +10033,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1490140658}
   - component: {fileID: 1490140659}
-  - component: {fileID: 1490140661}
-  - component: {fileID: 1490140662}
-  - component: {fileID: 1490140660}
+  - component: {fileID: 1490140663}
   m_Layer: 0
   m_Name: rogue
   m_TagString: Untagged
@@ -10024,7 +10050,7 @@ Transform:
   m_GameObject: {fileID: 1490140657}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.45, y: -1.58, z: 0}
+  m_LocalPosition: {x: 0.31, y: 0.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10082,82 +10108,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &1490140660
-CapsuleCollider2D:
+--- !u!95 &1490140663
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490140657}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.312405, y: -0.22045636}
-  m_Size: {x: 0.6758106, y: 0.8140962}
-  m_Direction: 0
---- !u!50 &1490140661
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1490140657}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &1490140662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1490140657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d7a08203a8bd04479462f479a89cb82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerSpeed: 4
-  _jumpForce: 5
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cee5dbff717c8044aaa579d48dbbce8c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1708669003
 GameObject:
   m_ObjectHideFlags: 0
@@ -10168,7 +10139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1708669005}
   - component: {fileID: 1708669004}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
