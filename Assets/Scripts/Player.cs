@@ -16,16 +16,20 @@ public class Player : MonoBehaviour
     private float _playerInputVertical;
 
     private Rigidbody2D _rBody2D;
-    private GroundSensor _sensor;
+   //private GroundSensor _sensor;
 
     private Animator _animator;
+
+    private SpriteRenderer _sprite;
 
     // Start is called before the first frame update
     void Start()
     {
         _rBody2D = GetComponent<Rigidbody2D>();
-        _sensor = GetComponentInChildren<GroundSensor>();
+        //_sensor = GetComponentInChildren<GroundSensor>();
         _animator= GetComponentInChildren<Animator>();
+
+        _sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -33,7 +37,7 @@ public class Player : MonoBehaviour
     {
       PlayerMovement();
 
-      if(Input.GetButtonDown("Jump") && _sensor._isGrounded)
+      if(Input.GetButtonDown("Jump") && GroundSensor._isGrounded)
       {
         Jump();
       }
@@ -59,9 +63,20 @@ public class Player : MonoBehaviour
         {
           _animator.SetBool("IsRunning", true);
         }
+
         if(_playerInputHorizontal == 0)
         {
           _animator.SetBool("IsRunning", false);
+        }
+
+        if(_playerInputHorizontal < 0)
+        {
+          _sprite.flipX = true;
+        }
+        
+        if(_playerInputHorizontal > 0)
+        {
+          _sprite.flipX = false;
         }
 
     }
