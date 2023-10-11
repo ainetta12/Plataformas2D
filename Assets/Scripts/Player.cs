@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class Player : MonoBehaviour
 {
@@ -18,18 +19,19 @@ public class Player : MonoBehaviour
     private Rigidbody2D _rBody2D;
    //private GroundSensor _sensor;
 
-    private Animator _animator;
+    [SerializeField]private Animator _animator;
 
-    private SpriteRenderer _sprite;
+    [SerializeField] private PlayableDirector _director;
+    
+    //private SpriteRenderer _sprite;
 
     // Start is called before the first frame update
     void Start()
     {
         _rBody2D = GetComponent<Rigidbody2D>();
         //_sensor = GetComponentInChildren<GroundSensor>();
-        _animator= GetComponentInChildren<Animator>();
 
-        _sprite = GetComponentInChildren<SpriteRenderer>();
+        //_sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -40,6 +42,11 @@ public class Player : MonoBehaviour
       if(Input.GetButtonDown("Jump") && GroundSensor._isGrounded)
       {
         Jump();
+      }
+
+      if(Input.GetButtonDown("Fire2"))
+      {
+        _director.Play();
       }
     }
     
@@ -71,12 +78,12 @@ public class Player : MonoBehaviour
 
         if(_playerInputHorizontal < 0)
         {
-          _sprite.flipX = true;
+          transform.rotation = Quaternion.Euler(0,180,0);
         }
         
         if(_playerInputHorizontal > 0)
         {
-          _sprite.flipX = false;
+          transform.rotation = Quaternion.Euler(0,0,0);
         }
 
     }
