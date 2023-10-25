@@ -31,6 +31,8 @@ public class Player : MonoBehaviour
         _rBody2D = GetComponent<Rigidbody2D>();
         //_sensor = GetComponentInChildren<GroundSensor>();
 
+        Debug.Log(GameManager.instance.vida);
+
         //_sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
@@ -98,6 +100,15 @@ public class Player : MonoBehaviour
     {
        Debug.Log("Senal recibida");
 
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+      if(other.gameObject.layer == 7)
+      {
+        SoundManager.instance.GameOver();
+      }
+      
     }
 
 }
