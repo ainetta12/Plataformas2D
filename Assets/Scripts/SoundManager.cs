@@ -3,32 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
-{
-    public static SoundManager instance{get; private set;}
+
+{ 
+   public static SoundManager instance { get; private set; }
     
-    AudioSource _sfxAudioSource;
+    AudioSource _SfxAudio;
+    [SerializeField]private AudioClip deathSound;
+    [SerializeField]private AudioClip jumpSound;
+    [SerializeField]private AudioClip bgmSound;
 
-    public AudioClip gameOver;
 
-    // Start is called before the first frame update
     void Awake()
     {
-        if(instance != null && instance != this)
+        _SfxAudio = GetComponent<AudioSource>();
+
+        if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
-
         }
         else
         {
             instance = this;
         }
-
-        _sfxAudioSource = GetComponent<AudioSource>();
-
     }
 
-    public void GameOver()
+    public void DeathSound()
     {
-        _sfxAudioSource.PlayOneShot(gameOver);
-    }    
+        _SfxAudio.PlayOneShot(deathSound);
+    }
+
+    public void JumpSound()
+    {
+        _SfxAudio.PlayOneShot(jumpSound);
+    }
+
 }
