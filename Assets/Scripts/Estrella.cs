@@ -5,21 +5,23 @@ using UnityEngine;
 public class Estrella : MonoBehaviour
 {
 
-    BoxCollider2D boxCollider;
-    //SFXManager sfxManager;
+    public int value;
 
     // Start is called before the first frame update
     void Start()
     {
-        boxCollider = GetComponent<BoxCollider2D>();
-       // sfxManager = GameObject.Find("SFXManager").GetComponent<SFXManager>();
+
     }
 
-    public void Die()
+
+
+    void OnTriggerEnter2D(Collider2D other)
     {
-        boxCollider.enabled = false;
-        Destroy(this.gameObject);
-        //sfxManager.CogerMoneda();
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            EstrellaCounter.instance.IncreaseEstrellas(value);
+        }
     }
 
 }

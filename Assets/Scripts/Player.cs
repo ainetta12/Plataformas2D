@@ -43,7 +43,6 @@ public class Player : MonoBehaviour
 
         //_sprite = GetComponentInChildren<SpriteRenderer>();
 
-        contadorEstrella = 0;
 
         soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
 
@@ -136,20 +135,7 @@ public class Player : MonoBehaviour
 
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "CollisionMoneda")
-        {
-            Destroy(collision.gameObject);
-            Estrella estrella = collision.gameObject.GetComponent<Estrella>();
-            estrella.Die();
-            contadorEstrella++;
-            contadorTexto.text = "estrella " + contadorEstrella.ToString();
-            Debug.Log("contadorEstrella");
-            
-        }
 
-    }
 }
 
 
