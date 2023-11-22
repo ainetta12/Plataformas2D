@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.UI;
+using UnityEngine.UI;
+
 
 public class Player : MonoBehaviour
 {
@@ -24,12 +26,13 @@ public class Player : MonoBehaviour
 
     [SerializeField] private PlayableDirector _director;
 
-    int contadorEstrella;
-    public Text contadorTexto;
-    private Estrella estrella;
-
+   
     private SoundManager soundManager;
     
+    
+    public int health;
+    public int numCorazones;
+
 
     //private SpriteRenderer _sprite;
 
@@ -82,24 +85,21 @@ public class Player : MonoBehaviour
 
          transform.Translate(new Vector2(_playerInputHorizontal, _playerInputVertical) *_playerSpeed * Time.deltaTime);*/
 
-        if (_playerInputHorizontal != 0)
-        {
-            _animator.SetBool("IsRunning", true);
-        }
-
-        if (_playerInputHorizontal == 0)
-        {
-            _animator.SetBool("IsRunning", false);
-        }
 
         if (_playerInputHorizontal < 0)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
+             _animator.SetBool("IsRunning", true);
         }
 
-        if (_playerInputHorizontal > 0)
+        else if (_playerInputHorizontal > 0)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
+            _animator.SetBool("IsRunning", true);
+        }
+        else 
+        {
+            _animator.SetBool("IsRunning",false);
         }
 
     }
@@ -135,6 +135,7 @@ public class Player : MonoBehaviour
 
     }
 
+ 
 
 }
 
