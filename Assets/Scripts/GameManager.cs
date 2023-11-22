@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     int estrellas;
 
+    public bool isGameOver;
+
     // Start is called before the first frame update
     void Awake()
     {
