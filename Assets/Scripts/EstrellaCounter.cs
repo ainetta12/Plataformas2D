@@ -20,12 +20,12 @@ public class EstrellaCounter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        estrellaText.text = "ESTRELLAS: " + currentEstrellas.ToString();
+        estrellaText.text = "ESTRELLAS: " + currentEstrella.ToString();
     }
 
-    public void IncreaseCoins(int v)
+    public void IncreaseEstrellas(int v)
     {
-        currentEstrellas += v;
-        estrellaText.text = "ESTRELLAS" + curremtEstrellas.TosTring();
+        currentEstrella += v;
+        estrellaText.text = "ESTRELLAS: " + currentEstrella.ToString();
     }
 }
