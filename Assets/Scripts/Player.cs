@@ -61,11 +61,6 @@ public class Player : MonoBehaviour
             Jump();
         }
 
-        if (Input.GetButtonDown("Fire2"))
-        {
-            _director.Play();
-        }
-
        
     }
 

@@ -11,9 +11,12 @@ public class SoundManager : MonoBehaviour
       [SerializeField]private AudioClip deathSound;
       [SerializeField]private AudioClip jumpSound;
       [SerializeField]private AudioClip bgmSound;
+      [SerializeField]private AudioClip destroyBomb;
+      [SerializeField]private AudioClip estrellaSound;
 
 
-      void Awake()
+
+    void Awake()
       {
           _SfxAudio = GetComponent<AudioSource>();
 
@@ -37,5 +40,13 @@ public class SoundManager : MonoBehaviour
           _SfxAudio.PlayOneShot(jumpSound);
       }
 
+      public void DestroyBomb()
+      {
+          _SfxAudio.PlayOneShot(destroyBomb);
+      }
 
+      public void EstrellaSound()
+      {
+        _SfxAudio.PlayOneShot(estrellaSound);
+      }
 }

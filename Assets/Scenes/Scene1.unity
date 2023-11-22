@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 12989274}
   - component: {fileID: 12989275}
+  - component: {fileID: 12989276}
   m_Layer: 0
   m_Name: BGMManager
   m_TagString: Untagged
@@ -251,6 +252,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &12989276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12989273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bf5aebd4ec4a8a43b66566100efcdbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: 2093f7968e26b094a8ae0b288125dd9c, type: 3}
 --- !u!1 &67637153
 GameObject:
   m_ObjectHideFlags: 0
@@ -11062,6 +11076,7 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: f7ad1f6dae109f341b4af9917c757808, type: 3}
   jumpSound: {fileID: 8300000, guid: 3967d6569c7bf1942bf3e27136461e89, type: 3}
   bgmSound: {fileID: 8300000, guid: 2093f7968e26b094a8ae0b288125dd9c, type: 3}
+  destroyBomb: {fileID: 8300000, guid: 00bde5cbd0abd0f42964ac831eac5247, type: 3}
 --- !u!4 &892612915
 Transform:
   m_ObjectHideFlags: 0

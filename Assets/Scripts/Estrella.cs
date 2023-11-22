@@ -7,13 +7,6 @@ public class Estrella : MonoBehaviour
 
     public int value;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -21,6 +14,7 @@ public class Estrella : MonoBehaviour
         {
             Destroy(gameObject);
             EstrellaCounter.instance.IncreaseEstrellas(value);
+            soundManager.EstrellaSound();
         }
     }
 

@@ -39,4 +39,11 @@ public class GameManager : MonoBehaviour
         estrellaText.text = estrellas.ToString();
     }
 
+
+    public void GameOverScene()
+    {
+
+        SceneManager.LoadScene(2);
+    }
+
 }
